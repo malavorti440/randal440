@@ -9,19 +9,11 @@
       width: 320px;
       padding: 10px;
       border: 5px solid gray;
-      margin-top: 20px;
-      margin-left: 120px;
+      margin-top: 5px;
+      margin-left: 180px;
     }
 </style>
 <body>  
-<form>
-  <label for="peso">Peso Actual:</label><br>
-  <input type="number" id="peso" name="peso" value="100"><br>
-  <label for="estatura">Estatura:</label><br>
-  <input type="number" id="estatura" name="estatura" value="1.50"><br>
-  <label for="sexo">SEXO: hombre, mujer</label><br>
-  <input type="text" id="sexo" name"sexo" value="hombre: h o mujer: m"<br>
-</form>
 
     
 <py-script>
@@ -103,32 +95,31 @@ else:
         print("RCT Hipocalorico")
         rctdm = float(pesoidealm*imcidealmax)
         rctdh = float(pesoidealh*imcidealmax)
-#        print("la meta es el peso ideal","%.2f" % pesoidealh)
+        print("la meta es el peso ideal","%.2f" % pesoidealh)
     else:
         if imc <= imcobetipo1max:
             print("RCT Hipocalorico")
             rctdh = float(pesoidealh*imcsobrepesometa)
             rctdm = float(pesoidealm*imcsobrepesometa)
-#            print("la meta sera llegar sobrepeso", "%.2f" % metasobrepeso)
+            print("la meta sera llegar sobrepeso", "%.2f" % metasobrepeso)
         else:
             if imc <= imcobetipo2max:
                 print("esta en sobrepeso tipo 2")
                 rctdh = float(pesoidealh*imcsobrepesometa)
                 rctdm = float(pesoidealm*imcsobrepesometa)
-#                print("la meta sera llegar a sobrepeso tipo 1","%.2f" % metaobetipo1)
+                print("la meta sera llegar a sobrepeso tipo 1","%.2f" % metaobetipo1)
             else:
                 if imc <= imcobemor:
                     print("RCT Hipocalorico")
                     rctdh = float(pesoidealh*imcsobrepesometa)
                     rctdm = float(pesoidealm*imcsobrepesometa)
-#                    print("la meta sera llegar a sobrepeso tipo 2","%.2f" % metaobetipo2)
+                    print("la meta sera llegar a sobrepeso tipo 2","%.2f" % metaobetipo2)
                 else:
                     imc > imcobemor
                     print("revisar datos porque no se puede calcular")
 
 if sexo == "h":
     pesoidealh = float(talla2*imcidealh)
-    print("Es hombre")
     print("peso ideal hombre: ","%.2f" % pesoidealh)
     print("requerimiento calorico hombre: ","%.2f" % rctdh)
 elif sexo == "m":
@@ -141,6 +132,15 @@ else:
 
   
 </py-script>
+<form>
+  <label for="peso">Peso Actual:</label><br>
+  <input type="number" id="peso" name="peso" value="peso"><br>
+  <label for="estatura">Estatura:</label><br>
+  <input type="number" id="estatura" name="estatura" value="estatura"><br>
+  <label for="sexo">SEXO: hombre, mujer</label><br>
+  <input type="text" id="sexo" name"sexo" value="sexo"<br>
+</form>
 
+    
 </body>
 </html>
