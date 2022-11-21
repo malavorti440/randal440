@@ -13,14 +13,25 @@
       margin-left: 180px;
     }
 </style>
-<body>  
+<body>
+<div>
+    <form>
+        <label for="peso">Peso Actual:</label><br>
+        <input type="number" id="peso" name="peso" value="peso"><br>
+        <label for="estatura">Estatura:</label><br>
+        <input type="number" id="estatura" name="estatura" value="estatura"><br>
+        <label for="sexo">SEXO: hombre, mujer</label><br>
+        <input type="text" id="sexo" name"sexo" value="sexo"<br>
+    </form>
+ </div>
 
-    
 <py-script>
 peso = float(input('ingrese su peso: '))
+print(peso)
 estatura = float(input('ingrese su estatura: '))
+print(estatura)
 sexo = input('Hombre: h, Mujer: m: ')
-
+print(sexo)
 talla2 = float(estatura*estatura)
 imc = float(peso/talla2)
 
@@ -132,14 +143,7 @@ else:
 
   
 </py-script>
-<form>
-  <label for="peso">Peso Actual:</label><br>
-  <input type="number" id="peso" name="peso" value="peso"><br>
-  <label for="estatura">Estatura:</label><br>
-  <input type="number" id="estatura" name="estatura" value="estatura"><br>
-  <label for="sexo">SEXO: hombre, mujer</label><br>
-  <input type="text" id="sexo" name"sexo" value="sexo"<br>
-</form>
+
 
     
 </body>
