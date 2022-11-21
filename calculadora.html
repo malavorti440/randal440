@@ -20,37 +20,24 @@
   <label for="estatura">Estatura:</label><br>
   <input type="number" id="estatura" name="estatura" value="1.50"><br>
   <label for="sexo">SEXO: hombre, mujer</label><br>
-  <input type="text" id="sexo" name"sexo" value="hombre o mujer"<br>
+  <input type="text" id="sexo" name"sexo" value="hombre: h o mujer: m"<br>
 </form>
 
     
 <py-script>
-peso = float("peso")
-estatura = float("estatura")
-#peso = float(input("ingrese su peso: "))
-#estatura = float(input("ingrese su estatura: "))
-#sexo = input("Hombre: h, Mujer: m: ")
+peso = float(input('ingrese su peso: '))
+estatura = float(input('ingrese su estatura: '))
+sexo = input('Hombre: h, Mujer: m: ')
 
 talla2 = float(estatura*estatura)
 imc = float(peso/talla2)
-"""
-las personas con menos 1.60 se usa el 22.5 para calcular el requerimiento calorico
-sea hombre o mujer
-
-"""
-#print(talla2)
-#print ("imc es: ", "%.2f" % imc)
 
 imcidealh = float(22.50)
 imcidealm = float(20.50)
 
 pesoidealh = float(talla2*imcidealh)
-#print("peso ideal hombre: ", "%.2f" % pesoidealh)
 
 pesoidealm = float(talla2*imcidealm)
-#print("peso ideal para mujer: ", "%.2f" % pesoidealm)
-
-
 
 imcideal = float(22.50)
 imcidealmin = float(20.50)
@@ -99,12 +86,9 @@ else:
                     print("Acudir a un especialista")
 
 
-
 rctdh = float(pesoidealh*imcidealmax)
-#print("requerimiento calorico hombre: ","%.2f" % rctdh)
-
 rctdm = float(pesoidealm*imcidealmax)
-#print("requerimiento calorico mujer: ","%.2f" % rctdm)
+
 
 if imc <= imcidealmin:
     rctdh = float(pesoidealh*imcidealmax)
