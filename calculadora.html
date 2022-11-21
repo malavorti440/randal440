@@ -3,7 +3,7 @@
 <head>
 <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-</head>  
+</head> 
 <style>
     div {
       width: 320px;
@@ -14,12 +14,22 @@
     }
 </style>
 <body>  
+<form>
+  <label for="peso">Peso Actual:</label><br>
+  <input type="number" id="peso" name="peso" value="100"><br>
+  <label for="estatura">Estatura:</label><br>
+  <input type="number" id="estatura" name="estatura" value="1.50"><br>
+  <label for="sexo">SEXO: hombre, mujer</label><br>
+  <input type="text" id="sexo" name"sexo" value="hombre o mujer"<br>
+</form>
 
+    
 <py-script>
-
-peso = float(input("Ingrese su peso actual: "))
-estatura = float(input("ingrese su estatura: "))
-sexo = input("Hombre: h, Mujer: m: ")
+peso = float("peso")
+estatura = float("estatura")
+#peso = float(input("ingrese su peso: "))
+#estatura = float(input("ingrese su estatura: "))
+#sexo = input("Hombre: h, Mujer: m: ")
 
 talla2 = float(estatura*estatura)
 imc = float(peso/talla2)
