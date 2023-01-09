@@ -5,7 +5,7 @@
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head> 
 <style>
-    div {
+    form {
       width: 320px;
       padding: 10px;
       border: 5px solid gray;
@@ -14,7 +14,6 @@
     }
 </style>
 <body>
-<div>
     <form>
         <label for="peso">Primero Peso Actual:</label><br>
         <input type="number" id="peso" name="peso" value="peso"><br>
@@ -23,7 +22,6 @@
         <label for="sexo">hombre: h y mujer: m</label><br>
         <input type="text" id="sexo" name"sexo" value="sexo"<br>
     </form>
- </div>
 
 <py-script>
 peso = float(input('ingrese su peso: '))
