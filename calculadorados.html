@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head> 
+<style>
+    div {
+      width: 320px;
+      padding: 10px;
+      border: 5px solid gray;
+      margin-top: 5px;
+      margin-left: 180px;
+    }
+</style>
+<body>
+<div>
+    <form>
+        <label for="peso">Primero Peso Actual:</label><br>
+        <input type="number" id="peso" name="peso" value="peso"><br>
+        <label for="estatura">Segundo es Estatura: ejemplo 1.65</label><br>
+        <input type="number" id="estatura" name="estatura" value="estatura"><br>
+        <label for="sexo">hombre: h y mujer: m</label><br>
+        <input type="text" id="sexo" name"sexo" value="sexo"<br>
+    </form>
+ </div>
+
+<py-script>
+peso = float(input('ingrese su peso: '))
+print(peso)
+estatura = float(input('ingrese su estatura: '))
+print(estatura)
+sexo = input('Hombre: h, Mujer: m: ')
+print(sexo)
+talla2 = float(estatura*estatura)
+imc = float(peso/talla2)
+
+imcidealh = float(22.50)
+imcidealm = float(20.50)
+
+pesoidealh = float(talla2*imcidealh)
+
+pesoidealm = float(talla2*imcidealm)
+
+imcideal = float(22.50)
+imcidealmin = float(20.50)
+imcidealmax = float(24.90)
+
+imcsoprepesomin = float(24.91)
+imcsobrepesometa = float(27.5)
+imcsobrepesomax = float(29.90)
+metasobrepeso = float(talla2*imcsobrepesomax)
+
+imcobetipo1min = float(29.91)
+imcobetipo1meta = float(32.50)
+imcobetipo1max = float(34.90)
+metaobetipo1 = float(talla2*imcobetipo1max)
+
+imcobetipo2min = float(34.91)
+imcobetipo2meta = float(37.50)
+imcobetipo2max = float(39.90)
+metaobetipo2 = float(talla2*imcobetipo2max)
+
+imcobemor = float(39.91)
+
+if imc < imcidealmin:
+    print("Acudir a un especialista")
+elif imc <= imcidealmax:
+    print("esta en peso normal")
+else:
+    if imc <= imcsobrepesomax:
+        print("esta en sobrepeso")
+        print("la meta es el peso ideal","%.2f" % pesoidealh)
+    else:
+        if imc <= imcobetipo1max:
+            print("esta en sobrepeso tipo 1")
+            print("la meta sera llegar sobrepeso", "%.2f" % metasobrepeso)
+        else:
+            if imc <= imcobetipo2max:
+                print("esta en sobrepeso tipo 2")
+                print("la meta sera llegar a sobrepeso tipo 1","%.2f" % metaobetipo1)
+            else:
+                if imc <= imcobemor:
+                    rctdm = float(pesoidealm*imcidealmax)
+                    print("esta en obesidad morbida")
+                    print("la meta sera llegar a sobrepeso tipo 2","%.2f" % metaobetipo2)
+                else:
+                    imc > imcobemor
+                    print("Acudir a un especialista")
+
+
+rctdh = float(pesoidealh*imcidealmax)
+rctdm = float(pesoidealm*imcidealmax)
+
+
+if imc <= imcidealmin:
+    rctdh = float(pesoidealh*imcidealmax)
+    rctdm = float(pesoidealm*imcidealmax)
+    print("RCT Hipercalorico")
+elif imc <= imcidealmax:
+    rctdh = float(pesoidealh*imcidealmax)
+    rctdm = float(pesoidealm*imcidealmax)
+    print("RCT Normocalorico")
+else:
+    if imc <= imcsobrepesomax:
+        print("RCT Hipocalorico")
+        rctdm = float(pesoidealm*imcidealmax)
+        rctdh = float(pesoidealh*imcidealmax)
+        print("la meta es el peso ideal","%.2f" % pesoidealh)
+    else:
+        if imc <= imcobetipo1max:
+            print("RCT Hipocalorico")
+            rctdh = float(pesoidealh*imcsobrepesometa)
+            rctdm = float(pesoidealm*imcsobrepesometa)
+            print("la meta sera llegar sobrepeso", "%.2f" % metasobrepeso)
+        else:
+            if imc <= imcobetipo2max:
+                print("esta en sobrepeso tipo 2")
+                rctdh = float(pesoidealh*imcsobrepesometa)
+                rctdm = float(pesoidealm*imcsobrepesometa)
+                print("la meta sera llegar a sobrepeso tipo 1","%.2f" % metaobetipo1)
+            else:
+                if imc <= imcobemor:
+                    print("RCT Hipocalorico")
+                    rctdh = float(pesoidealh*imcsobrepesometa)
+                    rctdm = float(pesoidealm*imcsobrepesometa)
+                    print("la meta sera llegar a sobrepeso tipo 2","%.2f" % metaobetipo2)
+                else:
+                    imc > imcobemor
+                    print("revisar datos porque no se puede calcular")
+
+if sexo == "h":
+    pesoidealh = float(talla2*imcidealh)
+    print("peso ideal hombre: ","%.2f" % pesoidealh)
+    print("requerimiento calorico hombre: ","%.2f" % rctdh)
+elif sexo == "m":
+    pesoidealm = float(talla2*imcidealm)
+    print("Es mujer")
+    print("peso ideal para mujer: ", "%.2f" % pesoidealm)
+    print("requerimiento calorico mujer: ", "%.2f" % rctdm)
+else:
+    print("no se puede calcular")
+
+  
+</py-script>
+
+
+    
+</body>
+</html>
