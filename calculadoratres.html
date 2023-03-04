@@ -24,8 +24,11 @@
     <span><input id="input_number" placeholder="Ingrese su Estatura:" type="text" style="background:lightcyan"></span> 
       </input>
     <b><p>Sexo: <u><label id='number3'></label></u></p></b>
-    <span><input id="input_number" placeholder="Hombre/Mujer:" type="text" style="background:lightcyan"></span>     
-    </input>
+    <span><input id="input_number" placeholder="Hombre/Mujer:" type="text" style="background:lightcyan"></span>
+    
+    <button onclick="window.print()">Print this page</button>
+    
+    <button type="button" onclick="input_number">Try it</button>
    </div>
       
     <py-script>
@@ -38,16 +41,16 @@ class Calculadora_Peso:
         
     def radians(self):
         num = int(self.n)
-        answer = (num-2)*math.pi/num
+        answer = (num*num)
         return answer
    
-    def _on_enter(*args, **kwargs):
+    def _on_click(*args, **kwargs):
         input_number = document.querySelector("#input_number")
         calculadora_peso_instance = Calculadora_Peso(input_number.value)
         pyscript.write('number1', calculadora_peso_instance.radians())
-
-    on_enter = create_proxy(_on_enter)
-    document.getElementById("input_number").addEventListener("change", on_enter)
+        
+    on_click = create_proxy(_on_click)
+    document.getElementById("input_number").addEventListener("change", on_click)
 
     </py-script>
 
