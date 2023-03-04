@@ -4,13 +4,24 @@
       <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     </head>
 
+    <style>
+    div {
+      width: 320px;
+      padding: 10px;
+      border: 5px solid gray;
+      margin-top: 5px;
+      margin-left: 180px;
+    }
+    </style>
   <body>
+  <div>   
     <h1>Polygons are fun! Use the number of sides to calculate the radians.</h1>
 
     <b><p>Radians: <u><label id='number1'></label></u></p></b>
 
     <span><input id="input_number" placeholder="enter number of sides here" type="text" style="background:lightcyan"></span>
   </input>
+      </div>
     <py-script>
 import math
 from pyodide import create_proxy
