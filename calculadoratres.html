@@ -43,8 +43,8 @@ class Calculadora_Peso:
    
     def _on_enter(*args, **kwargs):
         input_number = document.querySelector("#input_number")
-        regular_polygons_instance = Regular_Polygons(input_number.value)
-        pyscript.write('number1', regular_polygons_instance.radians())
+        calculadora_peso_instance = Calculadora_Peso(input_number.value)
+        pyscript.write('number1', calculadora_peso_instance.radians())
 
     on_enter = create_proxy(_on_enter)
     document.getElementById("input_number").addEventListener("change", on_enter)
