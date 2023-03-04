@@ -12,7 +12,7 @@
       margin-top: 5px;
       margin-left: 180px;
     }
-     .button {
+     button {
          background-color: #4CAF50;
          border: none;
          color: white;
@@ -29,7 +29,7 @@
   <div>   
     <h1>CALCULADORA NUTRICIONISTA.</h1>
 
-    <b><p>Peso: <u><label id='number1'></label></u></p></b>
+    <b><p>IMC: <u><label id='number1'></label></u></p></b>
     <span><input id="input_number" placeholder="Ingrese su peso:" type="text" style="background:lightcyan"></span>  
      </input>
     <b><p>Estatura: <u><label id='number2'></label></u></p></b>
@@ -48,12 +48,15 @@ import math
 from pyodide import create_proxy
 
 class Calculadora_Peso:
-    def __init__(self, n):
-        self.n = n
+    def __init__(self, p, t, s):
+        self.p = p
+        self.t = t
+        self.s = s
         
     def radians(self):
-        num = int(self.n)
-        answer = (num*num)
+        num = float(self.n)
+        num2 = float(self.t)
+        answer = (num/(num2*num2))
         return answer
    
     def _on_click(*args, **kwargs):
